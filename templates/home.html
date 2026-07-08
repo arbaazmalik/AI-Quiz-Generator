@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Quiz Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>AI Quiz Generator</h1>
+        <p>Paste any paragraph below. The app will generate 5 MCQs from it.</p>
+
+        {% if error %}
+        <p style="color: red; font-weight: bold;">{{ error }}</p>
+        {% endif %}
+
+        <form method="POST">
+            <textarea name="para" rows="10" required placeholder="Paste paragraph here..."></textarea>
+            <br><br>
+            <p><strong>Timer:</strong> 2 minutes (fixed)</p>
+            <button class="submit-btn" type="submit">Generate Quiz</button>
+        </form>
+    </div>
+</body>
+</html>

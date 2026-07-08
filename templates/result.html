@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="result-container">
+        <h1>Quiz Result</h1>
+        <p>Your Score: {{ score }} / {{ total }}</p>
+
+        {% if total > 0 %}
+            <p>Percentage: {{ (score / total * 100) | round(2) }}%</p>
+        {% endif %}
+
+        <a class="retry-btn" href="{{ url_for('restart') }}">Try Another Paragraph</a>
+    </div>
+</body>
+</html>

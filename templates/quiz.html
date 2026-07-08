@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Quiz</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+  <script>
+    function startTimer() {
+      let t = parseInt(document.body.dataset.timer);
+      const el = document.getElementById('timer');
+      el.innerText = t;
+
+      const iv = setInterval(() => {
+        t -= 1;
+        el.innerText = t;
+
+        if (t <= 0) {
+          clearInterval(iv);
+          document.getElementById('quizForm').submit();
+        }
+      }, 1000);
+    }
+
+    window.onload = startTimer;
+  </script>
+</head>
+
+<body data-timer="{{ timer_seconds }}">
+  <div class="quiz-container">
+    <h1>Quiz</h1>
+
+    <div style="text-align:right; font-weight:bold">
+      Time left: <span id="timer">{{ timer_seconds }}</span>s
+    </div>
+
+    <form method="POST" id="quizForm">
+
+      {% for q in questions %}
+      {% set q_index = loop.index0 %}
+      
+      <div class="question-block">
+        <p>{{ loop.index }}. {{ q.question }}</p>
+
+        {% for opt in q.options %}
+        <label>
+          <input type="radio" name="q{{ q_index }}" value="{{ opt }}" required>
+          {{ opt }}
+        </label><br>
+        {% endfor %}
+      </div>
+      {% endfor %}
+
+      <button class="submit-btn" type="submit">Submit</button>
+
+    </form>
+  </div>
+</body>
+</html>
