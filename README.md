@@ -5,13 +5,13 @@ An AI-powered Quiz Generator built with Python and Flask that automatically gene
 ## Tech Stack
 - Python
 - Flask
-- Google Gemini API
+- Grooq API
 - Prompt Engineering
 - HTML & CSS
 
 ## Features
 - Generate MCQs on any topic instantly
-- AI-powered question generation using Google Gemini API
+- AI-powered question generation using Grooq API
 - Clean and interactive UI
 - Restart quiz functionality
 
