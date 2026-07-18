@@ -1,6 +1,6 @@
 # AI Quiz Generator
 
-An AI-powered Quiz Generator built with Python and Flask that automatically generates topic-based MCQs using Google Gemini API.
+An AI-powered Quiz Generator built with Python and Flask that automatically generates topic-based MCQs using Grooq API.
 
 ## Tech Stack
 - Python
