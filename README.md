@@ -25,7 +25,7 @@ An AI-powered Quiz Generator built with Python and Flask that automatically gene
 
 3. Add your API key
    Create a .env file and add:
-   GEMINI_API_KEY=your_api_key_here
+   GROOQ_API_KEY=your_api_key_here
 
 4. Run the app
    python app.py
